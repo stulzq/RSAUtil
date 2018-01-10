@@ -67,4 +67,9 @@ var publicKey = keyList[1];
 
 ### Encrypt, decrypt, sign, and verify signatures
 
->
+>XML, Pkcs1, Pkcs8 respectively corresponding categories: `RsaXmlUtil`, `RsaPkcs1Util`, `RsaPkcs8Util`.They inherit from the abstract class `RSAUtilBase`
+
+- Encrypt: `RSAUtilBase.Encrypt()`
+- Decrypt: `RSAUtilBase.Decrypt()`
+- Sign: `RSAUtilBase.SignData()`
+- Verify: `RSAUtilBase.VerifyData()`
