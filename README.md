@@ -76,7 +76,7 @@ var publicKey = keyList[1];
 
 ### PEM formatting
 
->>Use class `RsaPemFormatHelper`.
+>Use class `RsaPemFormatHelper`.
 
 - Format Pkcs1 format private key: `RsaPemFormatHelper.Pkcs1PrivateKeyFormat()`
 - Remove the Pkcs1 format private key format: `RsaPemFormatHelper.Pkcs1PrivateKeyFormatRemove()`
