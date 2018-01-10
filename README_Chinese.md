@@ -1,5 +1,5 @@
 # RSAUtil
-.NET Core RSA算法帮助使用工具，支持数据加密，解密，签名和验证签名，支持xml，pkcs1，pkcs8三种密钥格式，支持这三种格式的密钥转换。最后还支持pem格式化。
+.NET Core RSA算法使用帮助工具，支持数据加密，解密，签名和验证签名，支持xml，pkcs1，pkcs8三种密钥格式，支持这三种格式的密钥转换。最后还支持pem格式化。
 
 [![Latest version](https://img.shields.io/nuget/v/XC.Framework.Security.RSAUtil.svg)](https://www.nuget.org/packages/XC.Framework.Security.RSAUtil/)
 
