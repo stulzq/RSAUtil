@@ -1,6 +1,8 @@
 # RSAUtil  [中文文档](https://github.com/stulzq/RSAUtil/blob/master/README_Chinese.md "中文文档")
 .NET Core RSA algorithm using the help tool.It supports data encryption, decryption, signature and verification signature.It supports three key formats, namely: xml, pkcs1, pkcs8.It also supports key conversion for these three formats.Last also support pem formatting.
 
+Thanks for onovotny's [bc-csharp](https://github.com/onovotny/bc-csharp "bc-csharp")
+
 [![Latest version](https://img.shields.io/nuget/v/XC.Framework.Security.RSAUtil.svg)](https://www.nuget.org/packages/XC.Framework.Security.RSAUtil/)
 
 # Doc
