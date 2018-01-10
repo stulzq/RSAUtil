@@ -73,3 +73,12 @@ var publicKey = keyList[1];
 - Decrypt: `RSAUtilBase.Decrypt()`
 - Sign: `RSAUtilBase.SignData()`
 - Verify: `RSAUtilBase.VerifyData()`
+
+### PEM formatting
+
+>>Use class `RsaPemFormatHelper`.
+
+- Format Pkcs1 format private key: `RsaPemFormatHelper.Pkcs1PrivateKeyFormat()`
+- Remove the Pkcs1 format private key format: `RsaPemFormatHelper.Pkcs1PrivateKeyFormatRemove()`
+- Format Pkcs8 format private key: `RsaPemFormatHelper.Pkcs8PrivateKeyFormat()`
+- Remove the Pkcs8 format private key format: `RsaPemFormatHelper.Pkcs8PrivateKeyFormatRemove()`
