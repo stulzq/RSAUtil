@@ -10,7 +10,7 @@ namespace XC.Framework.Security.RSAUtil
     /// Author:Zhiqiang Li
     /// CreateDate:2018-1-5
     /// </summary>
-    public class RsaXmlUtilBase:RSAUtilBase
+    public class RsaXmlUtil:RSAUtilBase
     {
         /// <summary>
         /// RSA encryption
@@ -20,7 +20,7 @@ namespace XC.Framework.Security.RSAUtil
         /// <param name="keySize">Key length in bits:</param>
         /// <param name="privateKey">private Key</param>
         /// <param name="publicKey">public Key</param>
-        public RsaXmlUtilBase(Encoding dataEncoding,string publicKey, string privateKey = null, int keySize = 2048)
+        public RsaXmlUtil(Encoding dataEncoding,string publicKey, string privateKey = null, int keySize = 2048)
         {
             if (string.IsNullOrEmpty(privateKey) && string.IsNullOrEmpty(publicKey))
             {

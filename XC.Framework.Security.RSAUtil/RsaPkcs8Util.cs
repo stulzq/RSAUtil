@@ -10,9 +10,9 @@ namespace XC.Framework.Security.RSAUtil
     /// RSA pkcs8 format key helper class
     /// Author:Zhiqiang Li
     /// </summary>
-    public class RsaPkcs8UtilBase:RSAUtilBase
+    public class RsaPkcs8Util:RSAUtilBase
     {
-        public RsaPkcs8UtilBase(Encoding dataEncoding, string publicKey, string privateKey = null, int keySize = 2048)
+        public RsaPkcs8Util(Encoding dataEncoding, string publicKey, string privateKey = null, int keySize = 2048)
         {
             if (string.IsNullOrEmpty(privateKey) && string.IsNullOrEmpty(publicKey))
             {

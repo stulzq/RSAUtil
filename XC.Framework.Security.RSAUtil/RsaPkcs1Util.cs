@@ -14,9 +14,9 @@ namespace XC.Framework.Security.RSAUtil
     /// RSA pkcs1 format key helper class
     /// Author:Zhiqiang Li
     /// </summary>
-    public class RsaPkcs1UtilBase:RSAUtilBase
+    public class RsaPkcs1Util:RSAUtilBase
     {
-        public RsaPkcs1UtilBase(Encoding encoding, string publicKey, string privateKey = null, int keySize = 2048)
+        public RsaPkcs1Util(Encoding encoding, string publicKey, string privateKey = null, int keySize = 2048)
         {
             if (string.IsNullOrEmpty(privateKey) && string.IsNullOrEmpty(publicKey))
             {
