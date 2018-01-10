@@ -6,6 +6,10 @@
     <Company>stulzq</Company>
     <Copyright>CopyRight 2018 stulzq</Copyright>
     <Description>.NET Core RSA algorithm using the help tool.It supports data encryption, decryption, signature and verification signature.It supports three key formats, namely: xml, pkcs1, pkcs8.It also supports key conversion for these three formats.Last also support pem formatting.</Description>
+    <PackageProjectUrl>https://github.com/stulzq/RSAUtil</PackageProjectUrl>
+    <PackageLicenseUrl>https://github.com/stulzq/RSAUtil/blob/master/LICENSE</PackageLicenseUrl>
+    <PackageRequireLicenseAcceptance>true</PackageRequireLicenseAcceptance>
+    <PackageTags>RSA,RSA Xml,RSA Pkcs1,RSA Pkcs8,RSA Convert,RSA Format,Pem,RSAUtil,RSAHelper</PackageTags>
   </PropertyGroup>
 
   <ItemGroup>
