@@ -13,7 +13,7 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\BouncyCastle.Crypto\BouncyCastle.Crypto.csproj" />
+    <ProjectReference Include="..\BouncyCastle.Crypto\XC.BouncyCastle.Crypto.csproj" />
   </ItemGroup>
 
 </Project>

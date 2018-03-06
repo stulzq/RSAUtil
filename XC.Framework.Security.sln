@@ -1,13 +1,13 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 15
-VisualStudioVersion = 15.0.27004.2005
+VisualStudioVersion = 15.0.27130.2010
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "XC.Framework.Security.Test", "XC.Framework.Security.Test\XC.Framework.Security.Test.csproj", "{939349EF-A767-49C5-9925-6C2705D6D2F0}"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "XC.Framework.Security.RSAUtil", "XC.Framework.Security.RSAUtil\XC.Framework.Security.RSAUtil.csproj", "{1EBBF9AB-132C-4B9B-A951-31618B713003}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "BouncyCastle.Crypto", "BouncyCastle.Crypto\BouncyCastle.Crypto.csproj", "{0E7A4128-66AF-4111-A835-51D9BF4371B6}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "XC.BouncyCastle.Crypto", "BouncyCastle.Crypto\XC.BouncyCastle.Crypto.csproj", "{0E7A4128-66AF-4111-A835-51D9BF4371B6}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
