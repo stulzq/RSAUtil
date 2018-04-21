@@ -5,6 +5,12 @@ Thanks for onovotny's [bc-csharp](https://github.com/onovotny/bc-csharp "bc-csha
 
 [![Latest version](https://img.shields.io/nuget/v/XC.Framework.Security.RSAUtil.svg)](https://www.nuget.org/packages/XC.Framework.Security.RSAUtil/)
 
+# Install
+
+````shell
+Install-Package XC.Framework.Security.RSAUtil -Version 1.0.1
+````
+
 # Doc
 
 ### Generate the key
