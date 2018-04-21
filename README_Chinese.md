@@ -3,6 +3,12 @@
 
 [![Latest version](https://img.shields.io/nuget/v/XC.Framework.Security.RSAUtil.svg)](https://www.nuget.org/packages/XC.Framework.Security.RSAUtil/)
 
+
+# Nuget安装
+````shell
+Install-Package XC.Framework.Security.RSAUtil -Version 1.0.1
+````
+
 # 文档
 
 ### 生成密钥
