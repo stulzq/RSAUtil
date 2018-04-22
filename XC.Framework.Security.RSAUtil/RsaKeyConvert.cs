@@ -44,7 +44,7 @@ namespace XC.Framework.Security.RSAUtil
         }
 
         /// <summary>
-        /// Public Key Convert xml->xml
+        /// Public Key Convert xml->pem
         /// </summary>
         /// <param name="publicKey"></param>
         /// <returns></returns>
