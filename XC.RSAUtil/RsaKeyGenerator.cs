@@ -7,7 +7,7 @@ using Org.BouncyCastle.Crypto;
 using Org.BouncyCastle.OpenSsl;
 using Org.BouncyCastle.Security;
 
-namespace XC.Framework.Security.RSAUtil
+namespace XC.RSAUtil
 {
     /// <summary>
     ///  Rsa Key Generator

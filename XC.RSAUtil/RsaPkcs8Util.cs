@@ -4,7 +4,7 @@ using System.Text;
 using Org.BouncyCastle.Crypto.Parameters;
 using Org.BouncyCastle.Security;
 
-namespace XC.Framework.Security.RSAUtil
+namespace XC.RSAUtil
 {
     /// <summary>
     /// RSA pkcs8 format key helper class

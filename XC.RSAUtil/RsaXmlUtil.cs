@@ -3,7 +3,7 @@ using System.Security.Cryptography;
 using System.Text;
 using System.Xml.Linq;
 
-namespace XC.Framework.Security.RSAUtil
+namespace XC.RSAUtil
 {
     /// <summary>
     /// .net core xml format The RSA key helper classes are compatible with the xml formatted keys used by the .NET Framework

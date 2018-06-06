@@ -1,10 +1,6 @@
 ﻿using System;
-using System.IO;
-using System.Security.Cryptography;
-using System.Text;
-using XC.Framework.Security.RSAUtil;
 
-namespace XC.Framework.Security.Test
+namespace XC.RSAUtil.Test
 {
     class Program
     {

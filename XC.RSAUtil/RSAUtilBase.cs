@@ -2,7 +2,7 @@
 using System.Security.Cryptography;
 using System.Text;
 
-namespace XC.Framework.Security.RSAUtil
+namespace XC.RSAUtil
 {
 	public abstract class RSAUtilBase
 	{
