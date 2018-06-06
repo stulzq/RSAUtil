@@ -1,13 +1,15 @@
 # RSAUtil
 .NET Core RSA算法使用帮助工具，支持数据加密，解密，签名和验证签名，支持xml，pkcs1，pkcs8三种密钥格式，支持这三种格式的密钥转换。最后还支持pem格式化。
 
-[![Latest version](https://img.shields.io/nuget/v/XC.Framework.Security.RSAUtil.svg)](https://www.nuget.org/packages/XC.Framework.Security.RSAUtil/)
+[![Latest version](https://img.shields.io/nuget/v/XC.RSAUtil.svg?style=flat-square)](https://www.nuget.org/packages/XC.RSAUtil/)
 
 
 # Nuget安装
 ````shell
-Install-Package XC.Framework.Security.RSAUtil -Version 1.0.1
+Install-Package XC.RSAUtil
 ````
+
+> 旧的Nuget包名为 `XC.Framework.Security.RSAUtil`，它因为太长已经被废弃了. 现在重命名为 `XC.RSAUtil` 并将一直使用。
 
 # 文档
 
@@ -90,3 +92,11 @@ var publicKey = keyList [1];
 - 删除Pkcs1格式私钥格式：`RsaPemFormatHelper.Pkcs1PrivateKeyFormatRemove（）`
 - 格式化Pkcs8格式私钥：`RsaPemFormatHelper.Pkcs8PrivateKeyFormat（）`
 - 删除Pkcs8格式的私钥格式：`RsaPemFormatHelper.Pkcs8PrivateKeyFormatRemove（）`
+
+## 使用的开源组件
+
+ [bc-csharp](https://github.com/onovotny/bc-csharp "bc-csharp") - onovotny
+
+## 案例
+
+[dotnetrsa](https://github.com/stulzq/dotnetrsa) - DotnetRSA 是一个利用 .NET Core 2.1 开发的 .NET Global Tool，是可以想npm全局安装一样，安装在你的系统中，只需敲一行命令便可以快速生成RSA加密算法所需的秘钥，目前支持三种格式的秘钥，分别为：xml、pkcs1、pkcs8。它还支持三种格式秘钥的想换转换。 

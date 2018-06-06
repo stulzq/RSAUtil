@@ -3,13 +3,15 @@
 
 Thanks for onovotny's [bc-csharp](https://github.com/onovotny/bc-csharp "bc-csharp")
 
-[![Latest version](https://img.shields.io/nuget/v/XC.Framework.Security.RSAUtil.svg)](https://www.nuget.org/packages/XC.Framework.Security.RSAUtil/)
+[![Latest version](https://img.shields.io/nuget/v/XC.RSAUtil.svg?style=flat-square)](https://www.nuget.org/packages/XC.RSAUtil/)
 
 # Install
 
 ````shell
-Install-Package XC.Framework.Security.RSAUtil -Version 1.0.1
+Install-Package XC.RSAUtil
 ````
+
+> The old package name is `XC.Framework.Security.RSAUtil`. Now renamed `XC.RSAUtil` and will continue to use.
 
 # Doc
 
@@ -89,6 +91,17 @@ var publicKey = keyList[1];
 >Use class `RsaPemFormatHelper`.
 
 - Format Pkcs1 format private key: `RsaPemFormatHelper.Pkcs1PrivateKeyFormat()`
+
 - Remove the Pkcs1 format private key format: `RsaPemFormatHelper.Pkcs1PrivateKeyFormatRemove()`
+
 - Format Pkcs8 format private key: `RsaPemFormatHelper.Pkcs8PrivateKeyFormat()`
+
 - Remove the Pkcs8 format private key format: `RsaPemFormatHelper.Pkcs8PrivateKeyFormatRemove()`
+
+## Reference component
+
+ [bc-csharp](https://github.com/onovotny/bc-csharp "bc-csharp") - onovotny
+
+## Cases
+
+[dotnetrsa](https://github.com/stulzq/dotnetrsa) - DotnetRSA is a .NET Core Global Tool.Dotnet RSA Tool can help you generate xml pkcs1, pkcs8 three kinds of format keys, and supports three types of mutual conversion. 
