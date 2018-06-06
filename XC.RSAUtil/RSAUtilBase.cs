@@ -53,24 +53,36 @@ namespace XC.Framework.Security.RSAUtil
 		/// <returns></returns>
 		public string SignData(string data, HashAlgorithmName hashAlgorithmName, RSASignaturePadding padding)
 		{
-			if (PrivateRsa == null)
-			{
-				throw new ArgumentException("private key can not null");
-			}
-			var dataBytes = DataEncoding.GetBytes(data);
-			var res = PrivateRsa.SignData(dataBytes, hashAlgorithmName, padding);
-			return Convert.ToBase64String(res);
+		    var res = SignDataGetBytes(data, hashAlgorithmName, padding);
+            return Convert.ToBase64String(res);
 		}
 
-		/// <summary>
-		/// Use public key to verify data signature
-		/// </summary>
-		/// <param name="data">Need to verify the signature data</param>
-		/// <param name="sign">sign</param>
-		/// <param name="hashAlgorithmName">Signed hash algorithm name</param>
-		/// <param name="padding">Signature padding algorithm</param>
-		/// <returns></returns>
-		public bool VerifyData(string data, string sign, HashAlgorithmName hashAlgorithmName, RSASignaturePadding padding)
+	    /// <summary>
+	    /// Use private key for data signing
+	    /// </summary>
+	    /// <param name="data">Need to sign data</param>
+	    /// <param name="hashAlgorithmName">Signed hash algorithm name</param>
+	    /// <param name="padding">Signature padding algorithm</param>
+	    /// <returns>Sign bytes</returns>
+	    public byte[] SignDataGetBytes(string data, HashAlgorithmName hashAlgorithmName, RSASignaturePadding padding)
+	    {
+	        if (PrivateRsa == null)
+	        {
+	            throw new ArgumentException("private key can not null");
+	        }
+	        var dataBytes = DataEncoding.GetBytes(data);
+	        return PrivateRsa.SignData(dataBytes, hashAlgorithmName, padding);
+	    }
+
+        /// <summary>
+        /// Use public key to verify data signature
+        /// </summary>
+        /// <param name="data">Need to verify the signature data</param>
+        /// <param name="sign">sign</param>
+        /// <param name="hashAlgorithmName">Signed hash algorithm name</param>
+        /// <param name="padding">Signature padding algorithm</param>
+        /// <returns></returns>
+        public bool VerifyData(string data, string sign, HashAlgorithmName hashAlgorithmName, RSASignaturePadding padding)
 		{
 			if (PublicRsa == null)
 			{
