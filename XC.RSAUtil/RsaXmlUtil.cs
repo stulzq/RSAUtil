@@ -59,7 +59,7 @@ namespace XC.RSAUtil
             }
             
 
-            DataEncoding = dataEncoding;
+            DataEncoding = dataEncoding ?? Encoding.UTF8;
         }
 
         /// <summary>
