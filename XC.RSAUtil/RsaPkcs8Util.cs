@@ -47,7 +47,7 @@ namespace XC.RSAUtil
                 PublicRsa.ImportParameters(pubRsap);
             }
 
-            DataEncoding = dataEncoding;
+            DataEncoding = dataEncoding ?? Encoding.UTF8;
         }
 
 		/// <summary>

@@ -14,7 +14,7 @@ namespace XC.RSAUtil
     /// RSA pkcs1 format key helper class
     /// Author:Zhiqiang Li
     /// </summary>
-    public class RsaPkcs1Util:RSAUtilBase
+    public class RsaPkcs1Util : RSAUtilBase
     {
         public RsaPkcs1Util(Encoding encoding, string publicKey, string privateKey = null, int keySize = 2048)
         {
@@ -42,7 +42,7 @@ namespace XC.RSAUtil
                     };
                     PublicRsa.ImportParameters(pubRasp);
                 }
-                
+
             }
 
             if (!string.IsNullOrEmpty(publicKey))
@@ -52,14 +52,14 @@ namespace XC.RSAUtil
                 PublicRsa.ImportParameters(CreateRsapFromPublicKey(publicKey));
             }
 
-            DataEncoding = encoding;
+            DataEncoding = encoding ?? Encoding.UTF8;
         }
-		/// <summary>
-		/// Create an RSA parameter based on the xml format public key
-		/// </summary>
-		/// <param name="publicKey"></param>
-		/// <returns></returns>
-		protected sealed override RSAParameters CreateRsapFromPublicKey(string publicKey)
+        /// <summary>
+        /// Create an RSA parameter based on the xml format public key
+        /// </summary>
+        /// <param name="publicKey"></param>
+        /// <returns></returns>
+        protected sealed override RSAParameters CreateRsapFromPublicKey(string publicKey)
         {
             publicKey = RsaPemFormatHelper.PublicKeyFormat(publicKey);
 
@@ -75,12 +75,12 @@ namespace XC.RSAUtil
             return rsap;
         }
 
-		/// <summary>
-		/// Create an RSA parameter based on the xml format private key
-		/// </summary>
-		/// <param name="privateKey"></param>
-		/// <returns></returns>
-		protected sealed override RSAParameters CreateRsapFromPrivateKey(string privateKey)
+        /// <summary>
+        /// Create an RSA parameter based on the xml format private key
+        /// </summary>
+        /// <param name="privateKey"></param>
+        /// <returns></returns>
+        protected sealed override RSAParameters CreateRsapFromPrivateKey(string privateKey)
         {
             privateKey = RsaPemFormatHelper.Pkcs1PrivateKeyFormat(privateKey);
 
@@ -90,7 +90,7 @@ namespace XC.RSAUtil
                 throw new Exception("Private key format is incorrect");
             }
             RsaPrivateCrtKeyParameters rsaPrivateCrtKeyParameters =
-                (RsaPrivateCrtKeyParameters) PrivateKeyFactory.CreateKey(
+                (RsaPrivateCrtKeyParameters)PrivateKeyFactory.CreateKey(
                     PrivateKeyInfoFactory.CreatePrivateKeyInfo(asymmetricCipherKeyPair.Private));
             var rsap = new RSAParameters();
             rsap.Modulus = rsaPrivateCrtKeyParameters.Modulus.ToByteArrayUnsigned();
