@@ -1,6 +1,6 @@
 ﻿using System.Collections.Generic;
 
-namespace XC.Framework.Security.RSAUtil
+namespace XC.RSAUtil
 {
     public class RsaPemFormatHelper
     {

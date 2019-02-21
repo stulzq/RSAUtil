@@ -10,6 +10,7 @@
     <PackageLicenseUrl>https://github.com/stulzq/RSAUtil/blob/master/LICENSE</PackageLicenseUrl>
     <PackageRequireLicenseAcceptance>true</PackageRequireLicenseAcceptance>
     <PackageTags>RSA,RSA Xml,RSA Pkcs1,RSA Pkcs8,RSA Convert,RSA Format,Pem,RSAUtil,RSAHelper</PackageTags>
+    <Version>1.1.0</Version>
   </PropertyGroup>
 
   <ItemGroup>

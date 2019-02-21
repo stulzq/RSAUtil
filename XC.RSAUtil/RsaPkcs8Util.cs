@@ -4,7 +4,7 @@ using System.Text;
 using Org.BouncyCastle.Crypto.Parameters;
 using Org.BouncyCastle.Security;
 
-namespace XC.Framework.Security.RSAUtil
+namespace XC.RSAUtil
 {
     /// <summary>
     /// RSA pkcs8 format key helper class
@@ -47,7 +47,7 @@ namespace XC.Framework.Security.RSAUtil
                 PublicRsa.ImportParameters(pubRsap);
             }
 
-            DataEncoding = dataEncoding;
+            DataEncoding = dataEncoding ?? Encoding.UTF8;
         }
 
 		/// <summary>

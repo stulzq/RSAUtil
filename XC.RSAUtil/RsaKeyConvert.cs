@@ -8,7 +8,7 @@ using Org.BouncyCastle.OpenSsl;
 using Org.BouncyCastle.Pkcs;
 using Org.BouncyCastle.Security;
 
-namespace XC.Framework.Security.RSAUtil
+namespace XC.RSAUtil
 {
     /// <summary>
     /// RSA Key Convert Class
@@ -44,7 +44,7 @@ namespace XC.Framework.Security.RSAUtil
         }
 
         /// <summary>
-        /// Public Key Convert xml->xml
+        /// Public Key Convert xml->pem
         /// </summary>
         /// <param name="publicKey"></param>
         /// <returns></returns>
