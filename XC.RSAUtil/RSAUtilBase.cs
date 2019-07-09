@@ -4,7 +4,7 @@ using System.Text;
 
 namespace XC.RSAUtil
 {
-	public abstract class RSAUtilBase
+	public abstract class RSAUtilBase:IDisposable
 	{
 		public RSA PrivateRsa;
 		public RSA PublicRsa;
@@ -96,5 +96,11 @@ namespace XC.RSAUtil
 
 		protected abstract RSAParameters CreateRsapFromPrivateKey(string privateKey);
 		protected abstract RSAParameters CreateRsapFromPublicKey(string publicKey);
-	}
+
+        public void Dispose()
+        {
+            PrivateRsa?.Dispose();
+            PublicRsa?.Dispose();
+        }
+    }
 }
