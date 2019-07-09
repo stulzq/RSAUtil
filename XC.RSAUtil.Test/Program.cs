@@ -1,4 +1,6 @@
 ﻿using System;
+using System.Security.Cryptography;
+using System.Text;
 
 namespace XC.RSAUtil.Test
 {
@@ -18,6 +20,13 @@ namespace XC.RSAUtil.Test
             var publicKey = keyList[1];
             Console.WriteLine("public key pkcs1->xml:");
             Console.WriteLine(RsaKeyConvert.PublicKeyPemToXml(publicKey));
+
+            var bigDataRsa=new RsaPkcs1Util(Encoding.UTF8, publicKey,privateKey,2048);
+            var str = bigDataRsa.EncryptBigData("abcdefg", 3, "$", RSAEncryptionPadding.Pkcs1);
+            Console.WriteLine("Big Data Encrypt:");
+            Console.WriteLine(str);
+            Console.WriteLine("Big Data Decrypt:");
+            Console.WriteLine(string.Join("", bigDataRsa.DecryptBigData(str, "$", RSAEncryptionPadding.Pkcs1)));
 
             Console.ReadKey();
         }
