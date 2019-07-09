@@ -10,8 +10,18 @@
     <PackageLicenseUrl>https://github.com/stulzq/RSAUtil/blob/master/LICENSE</PackageLicenseUrl>
     <PackageRequireLicenseAcceptance>true</PackageRequireLicenseAcceptance>
     <PackageTags>RSA,RSA Xml,RSA Pkcs1,RSA Pkcs8,RSA Convert,RSA Format,Pem,RSAUtil,RSAHelper</PackageTags>
-    <Version>1.3.0</Version>
+    <Version>1.3.1</Version>
     <PackageReleaseNotes>Support long string encryption and decryption.</PackageReleaseNotes>
+  </PropertyGroup>
+
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|AnyCPU'">
+    <DocumentationFile>bin\Release\netstandard2.0\XC.RSAUtil.xml</DocumentationFile>
+    <NoWarn>1701;1702;CS1591</NoWarn>
+  </PropertyGroup>
+
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">
+    <DocumentationFile>bin\Debug\netstandard2.0\XC.RSAUtil.xml</DocumentationFile>
+    <NoWarn>1701;1702;CS1591</NoWarn>
   </PropertyGroup>
 
   <ItemGroup>
