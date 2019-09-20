@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 
 namespace XC.RSAUtil
 {
@@ -30,7 +31,7 @@ namespace XC.RSAUtil
             }
 
             res.Add("-----END RSA PRIVATE KEY-----");
-            var resStr = string.Join("\r\n", res);
+            var resStr = string.Join(Environment.NewLine, res);
             return resStr;
         }
 
@@ -46,7 +47,7 @@ namespace XC.RSAUtil
                 return str;
             }
             return str.Replace("-----BEGIN RSA PRIVATE KEY-----", "").Replace("-----END RSA PRIVATE KEY-----", "")
-                .Replace("\r\n", "");
+                .Replace(Environment.NewLine, "");
         }
 
         /// <summary>
@@ -73,7 +74,7 @@ namespace XC.RSAUtil
             }
 
             res.Add("-----END PRIVATE KEY-----");
-            var resStr = string.Join("\r\n", res);
+            var resStr = string.Join(Environment.NewLine, res);
             return resStr;
         }
 
@@ -89,7 +90,7 @@ namespace XC.RSAUtil
                 return str;
             }
             return str.Replace("-----BEGIN PRIVATE KEY-----", "").Replace("-----END PRIVATE KEY-----", "")
-                .Replace("\r\n", "");
+                .Replace(Environment.NewLine, "");
         }
 
         /// <summary>
@@ -114,7 +115,7 @@ namespace XC.RSAUtil
                 pos += count;
             }
             res.Add("-----END PUBLIC KEY-----");
-            var resStr = string.Join("\r\n", res);
+            var resStr = string.Join(Environment.NewLine, res);
             return resStr;
         }
 
@@ -130,7 +131,7 @@ namespace XC.RSAUtil
                 return str;
             }
             return str.Replace("-----BEGIN PUBLIC KEY-----", "").Replace("-----END PUBLIC KEY-----", "")
-                .Replace("\r\n", "");
+                .Replace(Environment.NewLine, "");
         }
     }
 }

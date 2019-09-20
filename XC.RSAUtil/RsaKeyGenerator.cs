@@ -95,7 +95,7 @@ namespace XC.RSAUtil
 
             if (!format)
             {
-                privateKey = privateKey.Replace("-----BEGIN RSA PRIVATE KEY-----", "").Replace("-----END RSA PRIVATE KEY-----", "").Replace("\r\n", "");
+                privateKey = privateKey.Replace("-----BEGIN RSA PRIVATE KEY-----", "").Replace("-----END RSA PRIVATE KEY-----", "").Replace(Environment.NewLine, "");
             }
 
             res.Add(privateKey);
@@ -107,7 +107,7 @@ namespace XC.RSAUtil
             string publicKey = swpub.ToString();
             if (!format)
             {
-                publicKey = publicKey.Replace("-----BEGIN PUBLIC KEY-----", "").Replace("-----END PUBLIC KEY-----", "").Replace("\r\n", "");
+                publicKey = publicKey.Replace("-----BEGIN PUBLIC KEY-----", "").Replace("-----END PUBLIC KEY-----", "").Replace(Environment.NewLine, "");
             }
 
             res.Add(publicKey);
@@ -138,7 +138,7 @@ namespace XC.RSAUtil
 
             if (!format)
             {
-                privateKey = privateKey.Replace("-----BEGIN PRIVATE KEY-----", "").Replace("-----END PRIVATE KEY-----", "").Replace("\r\n", "");
+                privateKey = privateKey.Replace("-----BEGIN PRIVATE KEY-----", "").Replace("-----END PRIVATE KEY-----", "").Replace(Environment.NewLine, "");
             }
 
             res.Add(privateKey);
@@ -150,7 +150,7 @@ namespace XC.RSAUtil
             string publicKey = swpub.ToString();
             if (!format)
             {
-                publicKey = publicKey.Replace("-----BEGIN PUBLIC KEY-----", "").Replace("-----END PUBLIC KEY-----", "").Replace("\r\n", "");
+                publicKey = publicKey.Replace("-----BEGIN PUBLIC KEY-----", "").Replace("-----END PUBLIC KEY-----", "").Replace(Environment.NewLine, "");
             }
 
             res.Add(publicKey);
