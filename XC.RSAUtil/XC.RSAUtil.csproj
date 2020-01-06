@@ -10,8 +10,8 @@
     <PackageLicenseUrl>https://github.com/stulzq/RSAUtil/blob/master/LICENSE</PackageLicenseUrl>
     <PackageRequireLicenseAcceptance>true</PackageRequireLicenseAcceptance>
     <PackageTags>RSA,RSA Xml,RSA Pkcs1,RSA Pkcs8,RSA Convert,RSA Format,Pem,RSAUtil,RSAHelper</PackageTags>
-    <Version>1.3.4</Version>
-    <PackageReleaseNotes>Fix Replace \r\n incorrect on Linux</PackageReleaseNotes>
+    <Version>1.3.5</Version>
+    <PackageReleaseNotes>Fix big data encrypt</PackageReleaseNotes>
   </PropertyGroup>
 
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|AnyCPU'">
