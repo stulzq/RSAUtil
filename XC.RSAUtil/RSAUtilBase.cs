@@ -1,4 +1,6 @@
 ﻿using System;
+using System.Collections.Generic;
+using System.Linq;
 using System.Security.Cryptography;
 using System.Text;
 
@@ -10,13 +12,22 @@ namespace XC.RSAUtil
 		public RSA PublicRsa;
 		public Encoding DataEncoding;
 
-		/// <summary>
-		/// RSA public key encryption
-		/// </summary>
-		/// <param name="data">Need to encrypt data</param>
-		/// <param name="padding">Padding algorithm</param>
-		/// <returns></returns>
-		public string Encrypt(string data, RSAEncryptionPadding padding)
+        static readonly Dictionary<RSAEncryptionPadding, int> PaddingLimitDic = new Dictionary<RSAEncryptionPadding, int>()
+        {
+            [RSAEncryptionPadding.Pkcs1] = 11,
+            [RSAEncryptionPadding.OaepSHA1] = 42,
+            [RSAEncryptionPadding.OaepSHA256] = 66,
+            [RSAEncryptionPadding.OaepSHA384] = 98,
+            [RSAEncryptionPadding.OaepSHA512] = 130,
+        };
+
+        /// <summary>
+        /// RSA public key encryption
+        /// </summary>
+        /// <param name="data">Need to encrypt data</param>
+        /// <param name="padding">Padding algorithm</param>
+        /// <returns></returns>
+        public string Encrypt(string data, RSAEncryptionPadding padding)
 		{
 			if (PublicRsa == null)
 			{
@@ -31,39 +42,31 @@ namespace XC.RSAUtil
         /// [Not recommended] RSA public key split encryption
         /// <para>RSA encryption does not support too large data. In this case, symmetric encryption should be used, and RSA is used to encrypt symmetrically encrypted passwords.</para>
         /// </summary>
-        /// <param name="data">Need to encrypt data</param>
-        /// <param name="splitLength">data split length</param>
+        /// <param name="dataStr">Need to encrypt data</param>
         /// <param name="connChar">Encrypted result link character</param>
         /// <param name="padding">Padding algorithm</param>
         /// <returns></returns>
-        public string EncryptBigData(string data,int splitLength,string connChar, RSAEncryptionPadding padding)
+        public string EncryptBigData(string dataStr, RSAEncryptionPadding padding, char connChar='$')
         {
-            var sb=new StringBuilder();
-            if (splitLength >= data.Length)
-            {
-                throw new ArgumentOutOfRangeException(nameof(splitLength), "Split length cannot exceed the data length.");
-            }
+            var data = Encoding.UTF8.GetBytes(dataStr);
+            var modulusLength = PublicRsa.KeySize / 8;
+            var splitLength = modulusLength - PaddingLimitDic[padding];
+
+            var sb = new StringBuilder();
 
             var splitsNumber = Convert.ToInt32(Math.Ceiling(data.Length * 1.0 / splitLength));
 
             var pointer = 0;
             for (int i = 0; i < splitsNumber; i++)
             {
-                string currentStr;
-                if (data.Length < pointer + splitLength)
-                {
-                    currentStr = data.Substring(pointer, data.Length-pointer);
-                }
-                else
-                {
-                    currentStr = data.Substring(pointer, splitLength);
-                }
+                byte[] current = pointer + splitLength < data.Length ?  data.Skip(pointer).Take(splitLength).ToArray() : data.Skip(pointer).Take(data.Length-pointer).ToArray();
 
-                sb.Append(Encrypt(currentStr, padding)+connChar);
+                sb.Append(Convert.ToBase64String(PublicRsa.Encrypt(current, padding)));
+                sb.Append(connChar);
                 pointer += splitLength;
             }
 
-            return sb.ToString();
+            return sb.ToString().TrimEnd(connChar);
         }
 
         /// <summary>
@@ -88,24 +91,25 @@ namespace XC.RSAUtil
         /// <para>RSA encryption does not support too large data. In this case, symmetric encryption should be used, and RSA is used to encrypt symmetrically encrypted passwords.</para>
         /// </summary>
         /// <param name="connChar">Encrypted result link character</param>
-        /// <param name="data">Need to decrypt the data</param>
+        /// <param name="dataStr">Need to decrypt the data</param>
         /// <param name="padding">Padding algorithm</param>
         /// <returns></returns>
-        public string[] DecryptBigData(string data,string connChar, RSAEncryptionPadding padding)
+        public string DecryptBigData(string dataStr, RSAEncryptionPadding padding, char connChar = '$')
         {
             if (PrivateRsa == null)
             {
                 throw new ArgumentException("private key can not null");
             }
 
-            var splitsData = data.Split(new[] {connChar}, StringSplitOptions.RemoveEmptyEntries);
-            var result = new string[splitsData.Length];
-            for (int i = 0; i < splitsData.Length; i++)
+            var data = dataStr.Split(new []{ connChar }, StringSplitOptions.RemoveEmptyEntries);
+            var byteList = new List<byte>();
+
+            foreach (var item in data)
             {
-                result[i] = Decrypt(splitsData[i], padding);
+                byteList.AddRange(PrivateRsa.Decrypt(Convert.FromBase64String(item), padding));
             }
 
-            return result;
+            return Encoding.UTF8.GetString(byteList.ToArray());
         }
 
         /// <summary>
